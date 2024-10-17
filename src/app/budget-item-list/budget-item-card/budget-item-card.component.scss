@@ -1,0 +1,99 @@
+
+
+@import '../../../main-styles.scss';
+
+.root{
+ display: flex;
+ width:100%;
+ position:relative;
+
+ &:hover{
+    .x-icon-button{
+        opacity: 1;
+        transform: scale(1); //original size on hover
+    }
+ }
+
+ .x-icon-button{
+    position: absolute;
+    height:30px;
+    width:30px;
+    background-color:$dark ;
+    right:0;
+    background-image: url('../../../assets/icons8-delete-48.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius:50% ;
+    right:-17px;//this has to be hald of the width
+    top:-17px; //this has to be hald of the height
+
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+   transform: scale(0); //makes it invisible
+   opacity: 0;
+
+   cursor: pointer;
+
+   &:hover{
+    transform: scale(1.2);
+ 
+
+   }
+   
+ }
+
+}
+
+
+
+.budget-item{
+    display:flex;
+    width:100%;
+    background-color: $light-grey;
+    border-radius:5px;
+    padding:10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out ;
+
+    &:hover{
+        background-color: darken($light-grey, 2%);
+    }
+    
+
+    .description{
+        display: flex;
+        flex-grow: 1;
+        font-size:18px;
+        margin-left:5px;
+
+        //to vertically center the children elements
+        align-items: center;
+    }
+
+    .amount{
+        padding:5px;
+        border-radius:3px;
+    
+    
+    }
+}
+
+.expense{
+    p{
+        color: $red;  //the red has been defined as a variable in the main.styles.scss file
+    }
+
+    .amount{
+        background-color: $light-red;
+    }
+}
+
+.income{
+    p{
+        color: $green;  
+    }
+
+    .amount{
+        background-color: $light-green;
+    }
+}
