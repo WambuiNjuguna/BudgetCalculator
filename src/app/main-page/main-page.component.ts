@@ -47,7 +47,7 @@ budgetItem:BudgetItem[]=new Array<BudgetItem>();
  private savedBudgetItems(){
   localStorage.setItem('budgetItems', JSON.stringify(this.budgetItem))
  }
-git 
+
  private loadBudgetItems(){
   const storedItems = localStorage.getItem('budgetItems');
     if (storedItems) {
