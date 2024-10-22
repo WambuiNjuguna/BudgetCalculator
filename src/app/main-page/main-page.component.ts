@@ -7,6 +7,7 @@ import { BudgetItem } from 'src/shared/models/budget-item.model';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit{
+totalBudget:number=0;
 
 budgetItem:BudgetItem[]=new Array<BudgetItem>();
 
@@ -17,7 +18,15 @@ budgetItem:BudgetItem[]=new Array<BudgetItem>();
  }
 
  addItem(newItem:BudgetItem){
-    this.budgetItem.push(newItem)
+    this.budgetItem.push(newItem);
+    this.totalBudget+= newItem.amount
+ }
+
+ deleteItem(item:BudgetItem){
+  let index=this.budgetItem.indexOf(item);
+   this.budgetItem.splice(index,1)
+   this.totalBudget -= item.amount
+
  }
 
 }

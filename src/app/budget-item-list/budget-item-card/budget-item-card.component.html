@@ -1,7 +1,7 @@
 
 
 <div class="root">
-    <div class="budget-item" [ngClass]="{'income': item.amount >=0, 'expense':item.amount <=0}" >
+    <div class="budget-item" (click)="onCardClick ()" [ngClass]="{'income': item.amount >=0, 'expense':item.amount <=0}" >
         <div class="description">
             <p> {{item.description}}</p>
 
@@ -13,7 +13,7 @@
 
     </div>
 
-    <div class="x-icon-button">
+    <div class="x-icon-button" (click)="onXButtonClick()">
         
     </div>
 
